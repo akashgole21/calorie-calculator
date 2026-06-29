@@ -1,0 +1,396 @@
+// color style
+$primaryColor: #32e4cb;
+$white: #fff;
+$black: #000;
+$bgDark: #082521;
+
+//font style
+$headingFont: "Herokid Condensed";
+$bodyFont: "Herokid Wide";
+@font-face {
+  font-family: "Herokid Condensed";
+  src:
+    url("./assets/fonts/Herokid-Condensed-RegularBold.woff2") format("woff2"),
+    url("./assets/fonts/Herokid-Condensed-RegularBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Herokid Condensed";
+  src:
+    url(./assets/fonts/Herokid-SemiBoldCondensed.woff2) format("woff2"),
+    url(./assets/fonts/Herokid-SemiBoldCondensed.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Herokid Wide";
+  src:
+    url("./assets/fonts/Herokid-RegularWide.woff2") format("woff2"),
+    url("./assets/fonts/Herokid-RegularWide.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $bodyFont;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headingFont;
+  line-height: 1.2;
+  margin: 0px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 50px;
+}
+h2 {
+  font-size: 36px;
+}
+h3 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 26px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 18px;
+}
+
+p {
+  margin: 0px;
+  padding: 0 0 15px 0;
+}
+
+input::placeholder {
+  opacity: 1 !important;
+  color: $bgDark;
+}
+input {
+  color: $bgDark;
+  font-family: $bodyFont;
+}
+
+button {
+  font-family: $bodyFont;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  padding: 0;
+  list-style: none;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.col-11 {
+  width: 91.66666667%;
+}
+
+.col-10 {
+  width: 83.33333333%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-8 {
+  width: 66.66666667%;
+}
+
+.col-7 {
+  width: 58.33333333%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-5 {
+  width: 41.66666667%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-2 {
+  width: 16.66666667%;
+}
+
+.col-1 {
+  width: 8.33333333%;
+}
+
+.calcSection {
+  padding: 100px 30px;
+  .calcBox {
+    max-width: 600px;
+    width: 100%;
+    padding: 50px;
+    margin: auto;
+    background: $bgDark;
+    color: #fff;
+    border-radius: 15px;
+    h1 {
+      color: $white;
+      margin-bottom: 30px;
+    }
+
+    form {
+      width: 100%;
+      margin: auto;
+      text-align: left;
+      > .row {
+        margin: 0px -10px;
+      }
+      .formField {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+        padding: 0px 10px;
+        @media (max-width: 480px) {
+          width: 100%;
+        }
+        .fieldTitle {
+          width: 100%;
+        }
+
+        label {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+        input,
+        select {
+          width: 100%;
+          padding: 10px;
+          border-radius: 5px;
+          border: none;
+          background: #e9fffc;
+          margin-top: 6px;
+          color: $bgDark;
+          font-family: $bodyFont;
+          line-height: 1.2;
+        }
+      }
+
+      .genderField {
+        .radioWrapper {
+          display: flex;
+          gap: 50px;
+          width: 100%;
+          margin-top: 12px;
+          label {
+            position: relative;
+            display: inline-block;
+            width: auto;
+            .check {
+              display: block;
+              position: absolute;
+              border: 3px solid #fff;
+              border-radius: 100%;
+              height: 25px;
+              width: 25px;
+              top: 50%;
+              left: 0px;
+              transform: translateY(-50%);
+              z-index: 5;
+              transition: border 0.25s linear;
+              -webkit-transition: border 0.25s linear;
+              &::before {
+                display: block;
+                position: absolute;
+                content: "";
+                border-radius: 100%;
+                height: 10px;
+                width: 10px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin: auto;
+                transition: background 0.25s linear;
+                -webkit-transition: background 0.25s linear;
+              }
+            }
+
+            input[type="radio"]:checked ~ .check {
+              border: 3px solid $primaryColor;
+              &::before {
+                background: $primaryColor;
+              }
+            }
+            input[type="radio"]:checked ~ span {
+              color: $primaryColor;
+            }
+
+            input[type="radio"] {
+              position: absolute;
+              visibility: hidden;
+            }
+
+            // mele or femaile title
+            span {
+              display: block;
+              padding: 10px 0px 10px 50px;
+              transition: all 0.25s linear;
+            }
+          }
+        }
+      }
+
+      .heightField {
+        .inputWrapper {
+          width: 100%;
+          display: flex;
+          gap: 20px;
+          input {
+            width: 50%;
+          }
+        }
+      }
+
+      .selectField {
+        select {
+          appearance: none;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+
+          background-repeat: no-repeat;
+          background-position: right 12px center;
+          padding-right: 40px;
+        }
+      }
+
+      button {
+        background-color: $primaryColor;
+        color: $bgDark;
+        padding: 11px 15px;
+        border: none;
+        font-size: 14px;
+        line-height: 1;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+        border-radius: 5px;
+        min-width: 120px;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+        &:hover {
+          background-color: #e9fffc;
+        }
+      }
+    }
+  }
+
+  .resultBox {
+    max-width: 600px;
+    width: 100%;
+    padding: 50px;
+    margin: auto;
+    background: $bgDark;
+    color: #fff;
+    border-radius: 15px;
+    margin-top: 50px;
+    .resultdetails {
+      margin: 0px -10px;
+      justify-content: center;
+      .calorieBox {
+        width: 33.33%;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        @media (max-width: 580px) {
+          width: 50%;
+        }
+        @media (max-width: 480px) {
+          width: 100%;
+        }
+        > div {
+          width: 100%;
+          padding: 20px;
+          background-color: #d7fff9;
+          color: #082521;
+          border-radius: 5px;
+          @media (max-width: 480px) {
+            padding: 30px;
+          }
+          .calCounts {
+            width: 100%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            border-bottom: 1px solid $bgDark;
+            padding-bottom: 15px;
+            .number {
+              font-family: $headingFont;
+              font-size: 40px;
+              line-height: 1;
+            }
+            .unit {
+              font-size: 14px;
+            }
+          }
+          .calState {
+            font-size: 14px;
+            padding-top: 15px;
+          }
+        }
+      }
+    }
+  }
+}
